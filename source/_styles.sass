@@ -25,6 +25,11 @@ h1, h2, h3, h4, h5, h6, p, a, li
 li 
     margin-top: 3%
 
+a
+    transition: .3s ease
+    &:hover 
+        color: $white-dark
+
 
 .box 
     background-color: $black-dark
@@ -36,6 +41,7 @@ li
     display: grid
     grid-template-columns: repeat(3, 1fr)
     grid-template-rows: auto
+    column-gap: 1rem
 
 .about
     .container
@@ -54,10 +60,11 @@ li
                 &:hover 
                     background: $black-light
                     .author img
-                        transform: rotate(2.5deg)
-                    .content
+                        animation: rotate-image 3s forwards  
+                    .paragraph
                         opacity: 0
-                        content: 'Biography'
+                    .paragraph-hidden
+                        animation: opacity-visible 3s forwards
 
 
 
@@ -73,13 +80,43 @@ li
                 justify-items: end
             &:hover 
                 background-color: $black-light
-                .paragraph-hidden
-                    opacity: 1
 
 
 .footer
     text-align: center
     padding: 5%
+    a
+        text-decoration: none
+        transition: .3s ease
+        &:hover 
+            color: $white-dark
+
+
+
+
+@keyframes rotate-image
+    0%
+        transform: rotate(0)
+    50% 
+        transform: rotate(1.5deg)
+    100%
+        transform: rotate(2.5deg)
+
+@keyframes opacity-visible
+    0%
+        opacity: 0
+    20%
+        opacity: .2
+    40%
+        opacity: .4
+    60%
+        opacity: .6
+    80%
+        opacity: .8
+    100%
+        opacity: 1
+
+        
 
     
 
