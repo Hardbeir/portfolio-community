@@ -350,12 +350,14 @@ body {
 .paragraph-gray {
   color: #ACACAF;
 }
-
-.container {
-  margin: 0 5%;
+.paragraph-hidden {
+  opacity: 0;
+  color: #f2f2f2;
+  font-size: 24px;
+  text-align: center;
 }
 
-section {
+section, header {
   margin: 2% 0;
 }
 
@@ -369,23 +371,31 @@ li {
   margin-top: 3%;
 }
 
-.items .box, .biography .box {
+.box {
   background-color: #212121;
-}
-
-.about .container {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  justify-items: end;
-}
-.about .container .biography .box {
   display: grid;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+.container {
+  margin: 0 5%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+}
+
+.about .container {
+  grid-template-columns: 2fr 1fr;
+  justify-items: end;
+}
+.about .container .biography .box {
   grid-template-columns: auto 1fr;
   gap: 5%;
   padding: 5%;
+  -webkit-transition: 0.4s ease;
+  transition: 0.4s ease;
 }
 .about .container .biography .box .content {
   display: -webkit-box;
@@ -399,27 +409,36 @@ li {
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
+.about .container .biography .box:hover {
+  background: #353536;
+}
+.about .container .biography .box:hover .author img {
+  -webkit-transform: rotate(2.5deg);
+          transform: rotate(2.5deg);
+}
+.about .container .biography .box:hover .content {
+  opacity: 0;
+  content: "Biography";
+}
 
 .skills .container {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
   gap: 2%;
 }
 .skills .container .box {
-  display: grid;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  padding: 3%;
+  padding: 3% 0;
   background-color: #212121;
+  -webkit-transition: 0.4s ease;
+  transition: 0.4s ease;
 }
 .skills .container .box .title {
   display: grid;
   justify-items: end;
+}
+.skills .container .box:hover {
+  background-color: #353536;
+}
+.skills .container .box:hover .paragraph-hidden {
+  opacity: 1;
 }
 
 .footer {

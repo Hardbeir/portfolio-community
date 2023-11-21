@@ -5,13 +5,16 @@ html
 body
     background-color: $black
 
-.paragraph-gray
-    color: $white-dark
+.paragraph
+    &-gray
+        color: $white-dark
+    &-hidden
+        opacity: 0
+        color: $white
+        font-size: 24px
+        text-align: center
 
-.container
-    margin: 0 5%
-
-section
+section, header
     margin: 2% 0
 
 h1, h2, h3, h4, h5, h6, p, a, li
@@ -22,50 +25,56 @@ h1, h2, h3, h4, h5, h6, p, a, li
 li 
     margin-top: 3%
 
-.items, .biography 
-    .box 
-        background-color: $black-dark
 
+.box 
+    background-color: $black-dark
+    display: grid
+    justify-content: center
+
+.container
+    margin: 0 5%
+    display: grid
+    grid-template-columns: repeat(3, 1fr)
+    grid-template-rows: auto
 
 .about
     .container
-        display: grid
-        grid-template-columns: auto 1fr
+        grid-template-columns: 2fr 1fr
         justify-items: end
         .biography
             .box
-                display: grid
-                justify-content: center
                 grid-template-columns: auto 1fr
                 gap: 5%
                 padding: 5%
+                transition: .4s ease
                 .content
                     display: flex
                     flex-direction: column
                     justify-content: space-between
+                &:hover 
+                    background: $black-light
+                    .author img
+                        transform: rotate(2.5deg)
+                    .content
+                        opacity: 0
+                        content: 'Biography'
 
 
-        
-
-
-
-            
 
 .skills
     .container
-        display: grid
-        grid-template-columns: 1fr 1fr 1fr
-        grid-template-rows: 1fr
-        justify-content: space-evenly
-        gap: 2% 
+        gap: 2%
         .box 
-            display: grid
-            justify-content: center
-            padding: 3%
+            padding: 3% 0
             background-color: $black-dark
+            transition: .4s ease
             .title
                 display: grid
                 justify-items: end
+            &:hover 
+                background-color: $black-light
+                .paragraph-hidden
+                    opacity: 1
 
 
 .footer
