@@ -338,12 +338,22 @@ template {
   font-style: normal;
   font-display: swap;
 }
+html {
+  overflow: auto;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
 body {
   background-color: #121212;
 }
 
 .container {
   margin: 0 5%;
+}
+
+section {
+  margin: 2% 0;
 }
 
 h1, h2, h3, h4, h5, h6, p, a {
@@ -354,6 +364,32 @@ h1, h2, h3, h4, h5, h6, p, a {
   background-color: #212121;
 }
 
+.about .container {
+  display: grid;
+  grid-template-columns: auto 1fr;
+}
+.about .container .biography .box {
+  display: grid;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  grid-template-columns: auto 1fr;
+  gap: 5%;
+  padding: 5%;
+}
+.about .container .biography .box .content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
 .skills .container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -361,10 +397,16 @@ h1, h2, h3, h4, h5, h6, p, a {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
+  gap: 3%;
 }
 .skills .container .box {
+  display: grid;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   background-color: #212121;
 }
 .skills .container .box .title {
-  float: right;
+  display: grid;
+  justify-items: end;
 }/*# sourceMappingURL=main.css.map */

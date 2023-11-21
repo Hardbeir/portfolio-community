@@ -1,3 +1,7 @@
+html 
+    overflow: auto 
+    box-sizing: border-box
+    
 body
     background-color: $black
 
@@ -6,6 +10,9 @@ body
 .container
     margin: 0 5%
 
+section
+    margin: 2% 0
+
 h1, h2, h3, h4, h5, h6, p, a
     color: $white
 
@@ -13,13 +20,43 @@ h1, h2, h3, h4, h5, h6, p, a
     .box 
         background-color: $black-dark
 
+
+.about
+    .container
+        display: grid
+        grid-template-columns: auto 1fr
+        .biography
+            .box
+                display: grid
+                justify-content: center
+                grid-template-columns: auto 1fr
+                gap: 5%
+                padding: 5%
+                .content
+                    display: flex
+                    flex-direction: column
+                    justify-content: space-between
+        
+
+
+
+            
+
 .skills
     .container
         display: grid
         grid-template-columns: 1fr 1fr 1fr
         grid-template-rows: 1fr
-        justify-content: space-evenly     
+        justify-content: space-evenly
+        gap: 3% 
         .box 
+            display: grid
+            justify-content: center
             background-color: $black-dark
             .title
-                float: right
+                display: grid
+                justify-items: end
+
+    
+
+
