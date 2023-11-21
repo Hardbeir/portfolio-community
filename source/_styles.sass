@@ -5,7 +5,8 @@ html
 body
     background-color: $black
 
-
+.paragraph-gray
+    color: $white-dark
 
 .container
     margin: 0 5%
@@ -13,8 +14,13 @@ body
 section
     margin: 2% 0
 
-h1, h2, h3, h4, h5, h6, p, a
+h1, h2, h3, h4, h5, h6, p, a, li
     color: $white
+    font-family: 'Inter'
+    line-height: 24px
+
+li 
+    margin-top: 3%
 
 .items, .biography 
     .box 
@@ -24,7 +30,8 @@ h1, h2, h3, h4, h5, h6, p, a
 .about
     .container
         display: grid
-        grid-template-columns: auto 1fr
+        grid-template-columns: 2fr 1fr
+        justify-items: end
         .biography
             .box
                 display: grid
@@ -36,6 +43,8 @@ h1, h2, h3, h4, h5, h6, p, a
                     display: flex
                     flex-direction: column
                     justify-content: space-between
+
+
         
 
 
@@ -48,14 +57,20 @@ h1, h2, h3, h4, h5, h6, p, a
         grid-template-columns: 1fr 1fr 1fr
         grid-template-rows: 1fr
         justify-content: space-evenly
-        gap: 3% 
+        gap: 2% 
         .box 
             display: grid
             justify-content: center
+            padding: 3%
             background-color: $black-dark
             .title
                 display: grid
                 justify-items: end
+
+
+.footer
+    text-align: center
+    padding: 5%
 
     
 
