@@ -384,6 +384,10 @@ section, header {
   margin: 2% 0;
 }
 
+img {
+  width: 100%;
+}
+
 h1, h2, h3, h4, h5, h6, p, a, li {
   color: #f2f2f2;
   font-family: "Inter";
@@ -399,6 +403,40 @@ a {
   transition: 0.3s ease;
 }
 a:hover {
+  color: #ACACAF;
+}
+
+label {
+  color: #f2f2f2;
+}
+
+label, input, textarea {
+  padding: 0;
+  margin: 0;
+}
+
+input, textarea {
+  background: #212121;
+  border-radius: 8px;
+  border-color: #ACACAF;
+  border: 1px solid;
+  color: #ACACAF;
+  resize: none;
+  padding: 10px;
+}
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+  color: #ACACAF;
+}
+input::-moz-placeholder, textarea::-moz-placeholder {
+  color: #ACACAF;
+}
+input:-ms-input-placeholder, textarea:-ms-input-placeholder {
+  color: #ACACAF;
+}
+input::-ms-input-placeholder, textarea::-ms-input-placeholder {
+  color: #ACACAF;
+}
+input::placeholder, textarea::placeholder {
   color: #ACACAF;
 }
 
@@ -427,7 +465,7 @@ a:hover {
 .about .container .biography .box {
   grid-template-columns: auto 1fr;
   gap: 5%;
-  padding: 5%;
+  padding: 4%;
   -webkit-transition: 0.4s ease;
   transition: 0.4s ease;
 }
@@ -462,7 +500,7 @@ a:hover {
   gap: 2%;
 }
 .skills .container .box {
-  padding: 3% 0;
+  padding: 3% 5%;
   background-color: #212121;
   -webkit-transition: 0.4s ease;
   transition: 0.4s ease;
@@ -473,6 +511,43 @@ a:hover {
 }
 .skills .container .box:hover {
   background-color: #353536;
+}
+
+.contact {
+  padding-top: 8%;
+}
+.contact .container {
+  grid-template-columns: 1fr;
+  justify-items: center;
+}
+.contact .container .box {
+  grid-template-columns: repeat(2, 1fr);
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.contact .container .box .form {
+  margin: 0 10%;
+}
+.contact .container .box .form-box {
+  display: grid;
+  margin: 20px 0;
+  gap: 15px;
+}
+.contact .container .box .form .button-form {
+  float: right;
+  border-radius: 10px;
+  background-color: #f2f2f2;
+  color: #212121;
+  border: none;
+  width: 199px;
+  height: 48px;
+  cursor: pointer;
+  -webkit-transition: 0.4s ease;
+  transition: 0.4s ease;
+}
+.contact .container .box .form .button-form:hover {
+  background-color: #ACACAF;
 }
 
 .footer {
@@ -555,5 +630,58 @@ a:hover {
   }
   100% {
     opacity: 1;
+  }
+}
+@media (max-width: 1180px) {
+  h1, h2, h3, h4, h5, h6, p, a, li {
+    margin: 1% 0;
+  }
+  .author {
+    width: 70%;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .about .container .biography .box {
+    grid-template-columns: auto;
+    gap: 0;
+    justify-items: center;
+  }
+  .author-contacts {
+    width: 80%;
+  }
+}
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .author-contacts {
+    display: none;
+  }
+  .contact .container .box {
+    grid-template-columns: auto;
+    padding: 5%;
+  }
+  .contact .container .box .form {
+    margin: 0;
+  }
+}
+@media (max-width: 600px) and (min-width: 100px) {
+  .container {
+    grid-template-columns: 1fr;
+    grid-auto-rows: 1fr 1fr;
+  }
+  .author-contacts {
+    display: none;
+  }
+  .contact {
+    padding: 60% 0 0 0;
+  }
+  .contact .container .box {
+    grid-template-columns: auto;
+    padding: 5%;
+  }
+  .contact .container .box .form {
+    margin: 0;
   }
 }/*# sourceMappingURL=main.css.map */

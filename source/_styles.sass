@@ -17,6 +17,9 @@ body
 section, header
     margin: 2% 0
 
+img
+    width: 100%
+
 h1, h2, h3, h4, h5, h6, p, a, li
     color: $white
     font-family: 'Inter'
@@ -30,6 +33,23 @@ a
     &:hover 
         color: $white-dark
 
+label
+    color: $white
+
+label, input, textarea
+    padding: 0
+    margin: 0
+
+input, textarea 
+    background: $black-dark
+    border-radius: 8px
+    border-color: $white-dark
+    border: 1px solid
+    color: $white-dark
+    resize: none
+    padding: 10px
+    &::placeholder
+        color: $white-dark
 
 .box 
     background-color: $black-dark
@@ -51,7 +71,7 @@ a
             .box
                 grid-template-columns: auto 1fr
                 gap: 5%
-                padding: 5%
+                padding: 4%
                 transition: .4s ease
                 .content
                     display: flex
@@ -72,7 +92,7 @@ a
     .container
         gap: 2%
         .box 
-            padding: 3% 0
+            padding: 3% 5%
             background-color: $black-dark
             transition: .4s ease
             .title
@@ -81,6 +101,35 @@ a
             &:hover 
                 background-color: $black-light
 
+.contact
+    padding-top: 8%
+    .container
+        grid-template-columns: 1fr
+        justify-items: center
+        .box
+            grid-template-columns: repeat(2,1fr)
+            align-items: center
+            .form 
+                margin: 0 10%
+                &-box
+                    display: grid
+                    margin: 20px 0
+                    gap: 15px 
+                .button-form
+                    float: right
+                    border-radius: 10px
+                    background-color: $white
+                    color: $black-dark
+                    border: none
+                    width: 199px
+                    height: 48px
+                    cursor: pointer
+                    transition: .4s ease
+                    &:hover
+                        background-color: $white-dark
+
+                    
+  
 
 .footer
     text-align: center
